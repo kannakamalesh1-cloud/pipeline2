@@ -1,0 +1,12 @@
+
+# Use lightweight Nginx image
+FROM nginx:alpine
+
+# Copy app files to nginx html folder
+COPY app/ /usr/share/nginx/html
+
+# Expose port
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
